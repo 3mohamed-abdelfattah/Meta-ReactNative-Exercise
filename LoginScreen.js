@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
     fontSize: 16,
     borderColor: '#0A6847',
-    backgroundColor: '#F7F1D4',
+    backgroundColor: '#FFFCED',
     marginHorizontal: 100,
     borderWidth: 2,
     borderRadius: 15,
