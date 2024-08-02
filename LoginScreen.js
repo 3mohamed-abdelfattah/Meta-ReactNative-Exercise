@@ -5,6 +5,8 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
+  Image,
+  View,
 } from 'react-native';
 
 export default function LoginScreen() {
@@ -14,9 +16,16 @@ export default function LoginScreen() {
 
   return (
     <ScrollView style={styles.container}>
+      <View style={{ alignItems: 'center' }}>
+        <Image
+          source={{
+            uri: 'https://play-lh.googleusercontent.com/t_XvMjLc2uxTVXMiQatnBGbmRDuu_6-5cbPzJJhyaPyBh4iPAqqJ2MwOo0JAxScRwUqL=w240-h480-rw',
+          }}
+          style={styles.image}
+        />
+      </View>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
       {loggedIn && <Text style={styles.headerText}>You are logged in!</Text>}
-
       {!loggedIn && (
         <>
           <Text style={styles.regularText}>Login to continue </Text>
@@ -51,14 +60,15 @@ const styles = StyleSheet.create({
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: '#EDEFEE',
+    color: '#0A6847',
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#EDEFEE',
+    color: '#0A6847',
     textAlign: 'center',
   },
   inputBox: {
@@ -67,23 +77,32 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
-    borderColor: 'EDEFEE',
-    backgroundColor: '#EDEFEE',
+    borderColor: '0A6847',
+    backgroundColor: '#F6E9B2',
+    marginHorizontal: 100,
+    borderRadius: 15,
   },
   button: {
     fontSize: 22,
     padding: 10,
     marginVertical: 8,
     margin: 100,
-    backgroundColor: '#EE9972',
-    borderColor: '#EE9972',
+    backgroundColor: '#F3CA52',
+    borderColor: '#F3CA52',
     borderWidth: 2,
     borderRadius: 50,
   },
   buttonText: {
-    color: 'black',
+    color: '#0A6847',
     textAlign: 'center',
+    fontWeight: 'bold',
     fontSize: 25,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    margin: 10,
+    borderRadius: 100,
   },
 });
 

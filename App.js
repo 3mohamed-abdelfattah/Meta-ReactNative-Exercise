@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import LittleLemonHeader from './components/LittleLemonHeader';
-import LittleLemonFooter from './components/LittleLemonFooter';
 import LoginScreen from './LoginScreen';
+import LittleLemonHeader from './components/LittleLemonHeader';
 
 export default function App() {
   return (
@@ -19,9 +18,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333333',
+    backgroundColor: '#FCFAF3',
   },
-  footerContainer: { backgroundColor: '#333333' },
 });
 
 

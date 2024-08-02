@@ -12,12 +12,14 @@ export default function LittleLemonHeader() {
 const styles = StyleSheet.create({
   container: {
     flex: 0.16,
-    backgroundColor: '#EE9972',
+    backgroundColor: '#F3CA52',
+    borderRadius: 5,
   },
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: 'black',
+    color: '#0A6847',
     textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
