@@ -18,8 +18,9 @@ export default function LoginScreen() {
     <ScrollView style={styles.container}>
       <View style={{ alignItems: 'center' }}>
         <Image
+          resizeMode='contain'
           source={{
-            uri: 'https://play-lh.googleusercontent.com/t_XvMjLc2uxTVXMiQatnBGbmRDuu_6-5cbPzJJhyaPyBh4iPAqqJ2MwOo0JAxScRwUqL=w240-h480-rw',
+            uri: 'https://thelittlelemonscompany.com/cdn/shop/files/Main_Logo_3500x.png?v=1711468284',
           }}
           style={styles.image}
         />
@@ -77,9 +78,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
-    borderColor: '0A6847',
+    borderColor: '#0A6847',
     backgroundColor: '#F7F1D4',
     marginHorizontal: 100,
+    borderWidth: 2,
     borderRadius: 15,
   },
   button: {
@@ -99,10 +101,13 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     margin: 10,
     borderRadius: 100,
+    borderWidth: 14,
+    borderColor: '#0A6847',
+    borderRadius: 150,
   },
 });
 
