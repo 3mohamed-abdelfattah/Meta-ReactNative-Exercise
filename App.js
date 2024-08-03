@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import LoginScreen from './LoginScreen';
 import LittleLemonHeader from './components/LittleLemonHeader';
+import WindowD from './components/WindowD';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <View style={styles.container}>
         <LittleLemonHeader />
         <LoginScreen />
+        <WindowD />
       </View>
     </React.Fragment>
   );

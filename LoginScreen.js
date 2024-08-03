@@ -7,15 +7,24 @@ import {
   Pressable,
   Image,
   View,
+  useColorScheme,
+  useWindowDimensions,
 } from 'react-native';
 
 export default function LoginScreen() {
   const [email, onChangeEmail] = useState('');
   const [password, onChangePassword] = useState('');
   const [loggedIn, onLogin] = useState(false);
+  const colorScheme = useColorScheme();
+  const { width, height, fontScale } = useWindowDimensions();
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={[
+      styles.container,
+      colorScheme === 'light'
+        ? { backgroundColor: '#fff' }
+        : { backgroundColor: '#333333' },
+    ]}>
       <View style={{ alignItems: 'center' }}>
         <Image
           resizeMode='contain'
