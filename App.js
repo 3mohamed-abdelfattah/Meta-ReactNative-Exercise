@@ -7,25 +7,41 @@ import WelcomeScreen from './WelcomeScreen';
 import LoginScreen from './LoginScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <React.Fragment>
+    <>
       <NavigationContainer>
         <View style={styles.container}>
           <LittleLemonHeader />
-          <Stack.Navigator initialRouteName="Login" screenOptions={{ headerStyle: { backgroundColor: '#FBDABB' } }}>
-            <Stack.Screen name="Welcome" component={WelcomeScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login Page' }} />
-          </Stack.Navigator>
+          <Tab.Navigator initialRouteName="Login" screenOptions={({ route }) =>
+          ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
+              if (route.name === 'Login') {
+                iconName = focused ? 'log-in' : 'log-in-outline'
+              } else if (route.name === 'Welcome') {
+                iconName = focused ? 'home' : 'home-outline'
+              }
+              return <Ionicons name={iconName} size={size} color={color} />
+            },
+            tabBarActiveTintColor: 'tomato',
+            tabBarInactiveTintColor: 'gray',
+          })}>
+            <Tab.Screen name="Login" component={LoginScreen} />
+            <Tab.Screen name="Welcome" component={WelcomeScreen} />
+          </Tab.Navigator>
         </View>
         <View style={styles.footerContainer}>
           <LittleLemonFooter />
         </View>
       </NavigationContainer>
-    </React.Fragment>
+    </>
   );
 }
 
