@@ -1,6 +1,6 @@
-import { ScrollView, View, Text, StyleSheet, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Image, Pressable } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerWrapper}>
@@ -19,6 +19,9 @@ export default function WelcomeScreen() {
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
       </Text>
+      <Pressable onPress={() => navigation.goBack()} style={styles.pressable}>
+        <Text style={styles.pressableText}>Go Back</Text>
+      </Pressable>
     </ScrollView>
   );
 }
@@ -53,6 +56,17 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 20,
+  },
+  pressable: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    marginHorizontal: 100,
+    padding: 10,
+    borderRadius: 50,
+  },
+  pressableText: {
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
 

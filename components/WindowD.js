@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Text, useWindowDimensions, Button } from 'react-native';
 import { useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -10,7 +10,7 @@ export default function WindowD() {
   console.log('is orientation landscape: ', landscape);
 
   return (
-    <>
+    <Fragment>
       <Text>Window Dimensions</Text>
       <Text>Height: {window.height}</Text>
       <Text>Width: {window.width}</Text>
@@ -22,6 +22,6 @@ export default function WindowD() {
         onPress={() => setString('new clipboard data')}>
         Set Clipboard
       </Button>
-    </>
+    </Fragment>
   );
 }

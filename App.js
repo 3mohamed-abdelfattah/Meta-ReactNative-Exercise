@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <>
+    <React.Fragment>
       <NavigationContainer>
         <View style={styles.container}>
           <LittleLemonHeader />
@@ -25,7 +25,7 @@ export default function App() {
           <LittleLemonFooter />
         </View>
       </NavigationContainer>
-    </>
+    </React.Fragment>
   );
 }
 
