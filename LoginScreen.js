@@ -5,60 +5,34 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
-  Image,
-  View,
-  useColorScheme,
-  useWindowDimensions,
 } from 'react-native';
 
 export default function LoginScreen() {
   const [email, onChangeEmail] = useState('');
   const [password, onChangePassword] = useState('');
-  const [loggedIn, onLogin] = useState(false);
-  const colorScheme = useColorScheme();
-  const { width, height, fontScale } = useWindowDimensions();
 
   return (
-    <ScrollView style={[
-      styles.container,
-      colorScheme === 'light'
-        ? { backgroundColor: '#fff' }
-        : { backgroundColor: '#333333' },
-    ]}>
-      <View style={{ alignItems: 'center' }}>
-        <Image
-          resizeMode='contain'
-          source={{
-            uri: 'https://thelittlelemonscompany.com/cdn/shop/files/Main_Logo_3500x.png?v=1711468284',
-          }}
-          style={styles.image}
-        />
-      </View>
+    <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      {loggedIn && <Text style={styles.headerText}>You are logged in!</Text>}
-      {!loggedIn && (
-        <>
-          <Text style={styles.regularText}>Login to continue </Text>
-          <TextInput
-            style={styles.inputBox}
-            value={email}
-            onChangeText={onChangeEmail}
-            placeholder={'email'}
-            keyboardType={'email-address'}
-          />
-          <TextInput
-            style={styles.inputBox}
-            value={password}
-            onChangeText={onChangePassword}
-            placeholder={'password'}
-            keyboardType={'default'}
-            secureTextEntry={true}
-          />
-          <Pressable onPress={() => onLogin(!loggedIn)} style={styles.button}>
-            <Text style={styles.buttonText}>Log in</Text>
-          </Pressable>
-        </>
-      )}
+      <Text style={styles.regularText}>Login to continue </Text>
+      <TextInput
+        style={styles.inputBox}
+        value={email}
+        onChangeText={onChangeEmail}
+        placeholder={'email'}
+        keyboardType={'email-address'}
+      />
+      <TextInput
+        style={styles.inputBox}
+        value={password}
+        onChangeText={onChangePassword}
+        placeholder={'password'}
+        keyboardType={'default'}
+        secureTextEntry={true}
+      />
+      <Pressable onPress={() => { }} style={styles.button}>
+        <Text style={styles.buttonText}>Log in</Text>
+      </Pressable>
     </ScrollView>
   );
 }
@@ -66,19 +40,19 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#333333',
   },
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: '#0A6847',
-    fontWeight: 'bold',
+    color: '#EDEFEE',
     textAlign: 'center',
   },
   regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#0A6847',
+    color: '#EDEFEE',
     textAlign: 'center',
   },
   inputBox: {
@@ -87,36 +61,22 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
-    borderColor: '#0A6847',
-    backgroundColor: '#FFFCED',
-    marginHorizontal: 100,
-    borderWidth: 2,
-    borderRadius: 15,
+    borderColor: 'EDEFEE',
+    backgroundColor: '#EDEFEE',
   },
   button: {
     fontSize: 22,
     padding: 10,
     marginVertical: 8,
     margin: 100,
-    backgroundColor: '#F3CA52',
-    borderColor: '#F3CA52',
+    backgroundColor: '#EE9972',
+    borderColor: '#EE9972',
     borderWidth: 2,
     borderRadius: 50,
   },
   buttonText: {
-    color: '#0A6847',
+    color: 'black',
     textAlign: 'center',
-    fontWeight: 'bold',
     fontSize: 25,
   },
-  image: {
-    width: 250,
-    height: 250,
-    margin: 10,
-    borderRadius: 100,
-    borderWidth: 14,
-    borderColor: '#0A6847',
-    borderRadius: 150,
-  },
 });
-
